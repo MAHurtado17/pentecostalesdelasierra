@@ -1,1 +1,891 @@
 
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Pentecostales De La Sierra | Desde la Sierra para toda la Tierra</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description"
+        content="Pentecostales De La Sierra en Grass Valley, CA. Iglesia apostólica bilingüe (Español / Inglés). Desde la Sierra para toda la Tierra." />
+
+  <style>
+    :root {
+      --primary: #1e133f;   /* dark purple */
+      --accent: #a855f7;    /* light purple */
+      --light-bg: #f5f3ff;  /* very light purple */
+      --text-main: #111827;
+      --text-muted: #6b7280;
+      --max-width: 1100px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+        sans-serif;
+      color: var(--text-main);
+      background: #ffffff;
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    .container {
+      width: 100%;
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0 1.25rem;
+    }
+
+    /* NAVBAR */
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      background: rgba(30, 19, 63, 0.96);
+      backdrop-filter: blur(10px);
+      color: #f9fafb;
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.75rem 1.25rem;
+      max-width: var(--max-width);
+      margin: 0 auto;
+    }
+
+    .logo {
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      font-size: 0.95rem;
+      text-transform: uppercase;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 1rem;
+      font-size: 0.9rem;
+    }
+
+    .nav-links a {
+      opacity: 0.9;
+    }
+
+    .nav-links a:hover {
+      opacity: 1;
+    }
+
+    .nav-cta {
+      border-radius: 999px;
+      border: 1px solid rgba(248, 250, 252, 0.9);
+      padding: 0.4rem 0.9rem;
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      background: rgba(15, 23, 42, 0.1);
+    }
+
+    .nav-toggle {
+      display: none;
+      flex-direction: column;
+      gap: 4px;
+      cursor: pointer;
+    }
+
+    .nav-toggle span {
+      width: 20px;
+      height: 2px;
+      background: #e5e7eb;
+    }
+
+    /* HERO */
+
+    .hero {
+      position: relative;
+      color: #f9fafb;
+      min-height: 70vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      overflow: hidden;
+    }
+
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(to bottom right,
+          rgba(30, 19, 63, 0.95),
+          rgba(168, 85, 247, 0.7)),
+        url("hero.jpg"); /* Cambia esto por tu propia imagen */
+      background-size: cover;
+      background-position: center;
+      z-index: -1;
+    }
+
+    .hero-inner {
+      padding: 4rem 1.25rem 3rem;
+      max-width: 720px;
+    }
+
+    .hero-kicker {
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      font-size: 0.78rem;
+      color: #e5e7eb;
+      margin-bottom: 0.75rem;
+    }
+
+    .hero-title {
+      font-size: clamp(2.3rem, 4vw, 3.3rem);
+      font-weight: 800;
+      line-height: 1.1;
+      margin-bottom: 0.65rem;
+    }
+
+    .hero-subtitle {
+      font-size: 1rem;
+      max-width: 32rem;
+      margin: 0 auto 1.5rem;
+      color: #e5e7eb;
+    }
+
+    .hero-subtitle span {
+      display: block;
+    }
+
+    .hero-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 0.75rem;
+    }
+
+    .btn {
+      border-radius: 999px;
+      padding: 0.7rem 1.4rem;
+      border: none;
+      cursor: pointer;
+      font-size: 0.9rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.35rem;
+    }
+
+    .btn-primary {
+      background: var(--accent);
+      color: #f9fafb;
+    }
+
+    .btn-outline {
+      background: transparent;
+      color: #f9fafb;
+      border: 1px solid rgba(249, 250, 251, 0.85);
+    }
+
+    .hero-meta {
+      margin-top: 2rem;
+      font-size: 0.9rem;
+      color: #e5e7eb;
+      opacity: 0.9;
+    }
+
+    /* GENERIC SECTION STYLES */
+
+    section {
+      padding: 3.5rem 0;
+    }
+
+    section:nth-of-type(even) {
+      background: var(--light-bg);
+    }
+
+    .section-title {
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      font-size: 0.8rem;
+      color: var(--accent);
+      margin-bottom: 0.5rem;
+    }
+
+    .section-heading {
+      font-size: 1.7rem;
+      margin-bottom: 0.75rem;
+      font-weight: 700;
+    }
+
+    .section-text {
+      max-width: 640px;
+      color: var(--text-muted);
+      font-size: 0.98rem;
+    }
+
+    /* CONNECT SECTION */
+
+    .connect-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 3fr) minmax(0, 2fr);
+      gap: 2.5rem;
+      align-items: center;
+      margin-top: 1.5rem;
+    }
+
+    .callout-card {
+      background: var(--primary);
+      color: #f9fafb;
+      border-radius: 1rem;
+      padding: 1.75rem;
+    }
+
+    .callout-card h3 {
+      font-size: 1.3rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .callout-card p {
+      font-size: 0.95rem;
+      color: #e5e7eb;
+    }
+
+    /* SUBSCRIBE */
+
+    .subscribe-wrapper {
+      margin-top: 1.8rem;
+      display: grid;
+      gap: 1.2rem;
+      max-width: 520px;
+    }
+
+    .input-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.7rem;
+    }
+
+    input[type="email"],
+    input[type="tel"] {
+      flex: 1 1 180px;
+      padding: 0.7rem 0.8rem;
+      border-radius: 999px;
+      border: 1px solid #d1d5db;
+      font-size: 0.9rem;
+    }
+
+    input::placeholder {
+      color: #9ca3af;
+    }
+
+    .small-text {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+
+    /* BELIEFS */
+
+    .beliefs-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+
+    .belief-card {
+      background: #ffffff;
+      border-radius: 1rem;
+      padding: 1.5rem 1.4rem 1.4rem;
+      box-shadow: 0 12px 30px rgba(15, 23, 42, 0.08);
+      border: 1px solid #e5e7eb;
+    }
+
+    .belief-label {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: var(--accent);
+      margin-bottom: 0.4rem;
+    }
+
+    .belief-title {
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+    }
+
+    .belief-text {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      margin-bottom: 0.6rem;
+    }
+
+    .belief-scripture {
+      font-size: 0.82rem;
+      color: #4b5563;
+      font-style: italic;
+    }
+
+    /* HAPPENING SECTION */
+
+    .cards-row {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1.5rem;
+      margin-top: 1.8rem;
+    }
+
+    .event-card {
+      background: #ffffff;
+      border-radius: 1rem;
+      overflow: hidden;
+      border: 1px solid #e5e7eb;
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+    }
+
+    .event-content {
+      padding: 1.1rem 1.2rem 1.2rem;
+      flex: 1;
+    }
+
+    .event-tag {
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: var(--accent);
+      margin-bottom: 0.4rem;
+    }
+
+    .event-title {
+      font-size: 1rem;
+      font-weight: 600;
+      margin-bottom: 0.35rem;
+    }
+
+    .event-meta {
+      font-size: 0.86rem;
+      color: var(--text-muted);
+      margin-bottom: 0.6rem;
+    }
+
+    /* PASTORS SECTION */
+
+    .pastor-photo {
+      max-width: 260px;
+      border-radius: 16px;
+      overflow: hidden;
+      margin: 0 auto 1rem;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.18);
+    }
+
+    .pastor-name {
+      font-weight: 700;
+      margin-bottom: 0.2rem;
+      font-size: 1.2rem;
+    }
+
+    .pastor-role {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      margin-bottom: 0.8rem;
+    }
+
+    /* VISIT / CONTACT */
+
+    .visit-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 2fr) minmax(0, 3fr);
+      gap: 2rem;
+      margin-top: 1.5rem;
+    }
+
+    .schedule {
+      background: var(--primary);
+      color: #f9fafb;
+      border-radius: 1rem;
+      padding: 1.6rem 1.5rem;
+      font-size: 0.95rem;
+    }
+
+    .schedule h3 {
+      font-size: 1.2rem;
+      margin-bottom: 0.7rem;
+    }
+
+    .schedule dl {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      column-gap: 0.6rem;
+      row-gap: 0.3rem;
+      margin-bottom: 0.9rem;
+    }
+
+    .schedule dt {
+      font-weight: 600;
+    }
+
+    .schedule dd {
+      margin: 0;
+      opacity: 0.9;
+    }
+
+    .contact-block {
+      font-size: 0.95rem;
+      color: var(--text-muted);
+    }
+
+    .contact-block h3 {
+      font-size: 1.2rem;
+      color: var(--text-main);
+      margin-bottom: 0.6rem;
+    }
+
+    .contact-block p {
+      margin-bottom: 0.4rem;
+    }
+
+    .contact-block a {
+      color: var(--accent);
+      font-weight: 600;
+    }
+
+    /* FOOTER */
+
+    footer {
+      border-top: 1px solid #e5e7eb;
+      padding: 1.4rem 0 1.6rem;
+      font-size: 0.82rem;
+      color: var(--text-muted);
+    }
+
+    .footer-inner {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.75rem;
+    }
+
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.9rem;
+    }
+
+    .footer-links a {
+      text-decoration: none;
+    }
+
+    /* RESPONSIVE */
+
+    @media (max-width: 900px) {
+      .connect-grid,
+      .beliefs-grid,
+      .cards-row,
+      .visit-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+    }
+
+    @media (max-width: 720px) {
+      .nav-links {
+        position: absolute;
+        inset: 100% 0 auto 0;
+        background: rgba(30, 19, 63, 0.98);
+        flex-direction: column;
+        padding: 0.75rem 1.25rem 1rem;
+        display: none;
+      }
+
+      .nav-links.open {
+        display: flex;
+      }
+
+      .nav-toggle {
+        display: flex;
+      }
+
+      .nav-cta {
+        display: none;
+      }
+
+      .hero-inner {
+        padding-top: 3.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- HEADER / NAV -->
+  <header>
+    <div class="nav">
+      <div class="logo">
+        PENTECOSTALES DE LA SIERRA
+      </div>
+
+      <nav class="nav-links" id="nav-links">
+        <a href="#home">Inicio / Home</a>
+        <a href="#connect">Conéctate</a>
+        <a href="#beliefs">Creencias</a>
+        <a href="#events">Eventos</a>
+        <a href="#pastors">Pastores</a>
+        <a href="#visit">Visítanos</a>
+      </nav>
+
+      <a class="nav-cta" href="#visit">Planifica tu visita</a>
+
+      <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <main id="home">
+    <section class="hero">
+      <div class="hero-bg"></div>
+      <div class="hero-inner">
+        <div class="hero-kicker">Grass Valley, California · Iglesia Apostólica</div>
+        <h1 class="hero-title">Pentecostales De La Sierra</h1>
+        <p class="hero-subtitle">
+          <span>Desde la Sierra para toda la Tierra.</span>
+          <span style="opacity: 0.9; font-size: 0.95rem;">
+            From the Sierra to the whole Earth.
+          </span>
+        </p>
+        <div class="hero-buttons">
+          <a href="https://www.facebook.com/Pentecostalesdelasierra"
+             target="_blank" class="btn btn-primary">
+            Ver en Facebook
+          </a>
+          <a href="#visit" class="btn btn-outline">
+            Planifica tu visita
+          </a>
+        </div>
+        <div class="hero-meta">
+          Domingo 2:00 PM · Jueves 7:00 PM · Servicios bilingües (Español / Inglés)
+        </div>
+      </div>
+    </section>
+
+    <!-- CONNECT SECTION -->
+    <section id="connect">
+      <div class="container">
+        <p class="section-title">Conéctate aquí · Connect here</p>
+        <h2 class="section-heading">Una familia espiritual en la Sierra.</h2>
+        <p class="section-text">
+          Creemos que Dios nos llamó a levantar una iglesia viva en la Sierra,
+          donde Su presencia transforma vidas y familias. Aquí encontrarás
+          adoración apasionada, enseñanza bíblica y un pueblo que te abraza tal
+          como eres.
+        </p>
+
+        <div class="connect-grid">
+          <div>
+            <p class="section-text">
+              Ya sea que estés comenzando a conocer de Jesús o buscando un
+              hogar espiritual, hay un lugar para ti en Pentecostales De La
+              Sierra. Ven listo para recibir, crecer y servir.
+            </p>
+            <p class="section-text" style="margin-top: 0.8rem;">
+              Whether you are exploring faith, returning to church, or looking
+              for a home church, you are welcome here. We are a bilingual
+              congregation, worshiping together in Spanish and English.
+            </p>
+          </div>
+
+          <div class="callout-card">
+            <h3>Da tu siguiente paso</h3>
+            <p>
+              Únete a un servicio, conéctate a un grupo, pide oración o comienza
+              un estudio bíblico. Queremos caminar contigo en tu relación con
+              Jesús.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SUBSCRIBE SECTION (DEMO) -->
+    <section>
+      <div class="container">
+        <p class="section-title">Mantente informado</p>
+        <h2 class="section-heading">Recibe noticias y recordatorios.</h2>
+        <p class="section-text">
+          Comparte tu información de contacto para recibir anuncios de eventos,
+          recordatorios de servicios y mensajes de ánimo de la iglesia.
+        </p>
+
+        <form class="subscribe-wrapper">
+          <div class="input-row">
+            <input type="email" placeholder="Correo electrónico" required />
+            <input type="tel" placeholder="Número de teléfono (opcional)" />
+          </div>
+          <button type="submit" class="btn btn-primary">
+            Suscribirme
+          </button>
+          <p class="small-text">
+            Este formulario es de demostración. Al lanzar el sitio, conéctalo
+            a tu servicio real de correo o SMS.
+          </p>
+        </form>
+      </div>
+    </section>
+
+    <!-- HAPPENING SECTION -->
+    <section id="events">
+      <div class="container">
+        <p class="section-title">Qué está pasando</p>
+        <h2 class="section-heading">Reuniones y eventos.</h2>
+        <p class="section-text">
+          Nuestros servicios y actividades están diseñados para ayudarte a
+          crecer en tu fe y construir relaciones genuinas con otros creyentes.
+        </p>
+
+        <div class="cards-row">
+          <article class="event-card">
+            <img src="event1.jpg" alt="Servicio de adoración" />
+            <!-- Sube tu propia imagen y actualiza el archivo -->
+            <div class="event-content">
+              <div class="event-tag">Domingo</div>
+              <h3 class="event-title">Servicio de Adoración</h3>
+              <p class="event-meta">Domingos · 2:00 PM</p>
+              <p class="small-text">
+                Tiempo de adoración, predicación apostólica y un altar abierto
+                para buscar la presencia de Dios.
+              </p>
+            </div>
+          </article>
+
+          <article class="event-card">
+            <img src="event2.jpg" alt="Estudio bíblico" />
+            <div class="event-content">
+              <div class="event-tag">Jueves</div>
+              <h3 class="event-title">Estudio Bíblico</h3>
+              <p class="event-meta">Jueves · 7:00 PM</p>
+              <p class="small-text">
+                Enseñanza práctica de la Palabra de Dios, preguntas y
+                respuestas, y tiempo de oración juntos.
+              </p>
+            </div>
+          </article>
+
+          <article class="event-card">
+            <img src="event3.jpg" alt="Alcance comunitario" />
+            <div class="event-content">
+              <div class="event-tag">Especial</div>
+              <h3 class="event-title">Eventos y Alcance</h3>
+              <p class="event-meta">Fechas variables</p>
+              <p class="small-text">
+                Nos esforzamos por bendecir a Grass Valley y las comunidades
+                cercanas a través de diferentes actividades y proyectos.
+              </p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- BELIEFS SECTION -->
+    <section id="beliefs">
+      <div class="container">
+        <p class="section-title">En qué creemos</p>
+        <h2 class="section-heading">Mensaje apostólico para hoy.</h2>
+        <p class="section-text">
+          Somos una iglesia apostólica que predica el mensaje del libro de
+          Hechos: arrepentimiento, bautismo en el Nombre de Jesús y la
+          promesa del Espíritu Santo para todos.
+        </p>
+
+        <div class="beliefs-grid">
+          <article class="belief-card">
+            <p class="belief-label">Paso Uno</p>
+            <h3 class="belief-title">Arrepentimiento</h3>
+            <p class="belief-text">
+              El arrepentimiento es volverse de todo pecado y rendir el corazón
+              completamente a Dios, confiando en Su gracia.
+            </p>
+            <p class="belief-scripture">
+              “Arrepentíos… para que sean borrados vuestros pecados.” (Hch 3:19)
+            </p>
+          </article>
+
+          <article class="belief-card">
+            <p class="belief-label">Paso Dos</p>
+            <h3 class="belief-title">Bautismo en el Nombre de Jesús</h3>
+            <p class="belief-text">
+              Practicamos el bautismo en agua por inmersión en el Nombre de
+              Jesucristo, como enseñanza clara de la iglesia primitiva.
+            </p>
+            <p class="belief-scripture">
+              “Bautícese cada uno de vosotros en el nombre de Jesucristo.” (Hch 2:38)
+            </p>
+          </article>
+
+          <article class="belief-card">
+            <p class="belief-label">Paso Tres</p>
+            <h3 class="belief-title">Vida llena del Espíritu</h3>
+            <p class="belief-text">
+              Creemos en la experiencia del Espíritu Santo con la evidencia
+              bíblica y en una vida de poder, santidad y testimonio.
+            </p>
+            <p class="belief-scripture">
+              “Recibiréis poder cuando haya venido sobre vosotros el Espíritu Santo.” (Hch 1:8)
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- PASTORS SECTION -->
+    <section id="pastors">
+      <div class="container">
+        <p class="section-title">Nuestros Pastores · Our Pastors</p>
+        <h2 class="section-heading">Conoce a nuestros líderes.</h2>
+        <p class="section-text">
+          Dios ha levantado líderes con un corazón por la Sierra y por las familias.
+          Servimos con amor, unidad y visión apostólica. Somos una iglesia bilingüe
+          comprometida con alcanzar Grass Valley y las comunidades vecinas.
+        </p>
+
+        <div class="connect-grid" style="margin-top: 2rem;">
+          <!-- PHOTO -->
+          <div>
+            <div class="pastor-photo">
+              <!-- Usa el archivo que subiste -->
+              <img src="Pastoral%20family%202025.jpg" alt="Familia pastoral" />
+            </div>
+          </div>
+
+          <!-- TEXT -->
+          <div>
+            <p class="pastor-name">Familia Pastoral</p>
+            <p class="pastor-role">Pastores · Leaders</p>
+
+            <p class="section-text">
+              Nuestra familia pastoral está dedicada a servir a Dios y a nuestra
+              comunidad con humildad, pasión y amor. Creemos en el poder del Espíritu
+              Santo para transformar vidas, restaurar hogares y avivar corazones.
+            </p>
+
+            <p class="section-text" style="margin-top: 0.7rem;">
+              Our pastoral family is committed to teaching the Word, serving our city,
+              and welcoming everyone who desires to grow spiritually. We are here to
+              support, guide, and walk alongside you in your journey with Christ.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- VISIT / CONTACT -->
+    <section id="visit">
+      <div class="container">
+        <p class="section-title">Visítanos</p>
+        <h2 class="section-heading">Hay un lugar para ti.</h2>
+        <p class="section-text">
+          Planifica tu visita, haz una pregunta o déjanos saber cómo podemos
+          servir a tu familia. ¡Nos encantaría conocerte!
+        </p>
+
+        <div class="visit-grid">
+          <div class="schedule">
+            <h3>Horario de servicios</h3>
+            <dl>
+              <dt>Domingo</dt>
+              <dd>2:00 PM · Servicio principal</dd>
+              <dt>Jueves</dt>
+              <dd>7:00 PM · Estudio bíblico</dd>
+            </dl>
+            <p class="small-text">
+              Servicios bilingües: Español / Inglés.
+              Actualiza este horario si cambia en el futuro.
+            </p>
+          </div>
+
+          <div class="contact-block">
+            <h3>Ubicación y contacto</h3>
+            <p>
+              <strong>Dirección</strong><br />
+              10050 Wolf Road<br />
+              Grass Valley, CA 95945
+            </p>
+            <p>
+              <strong>Teléfono</strong><br />
+              <a href="tel:15303443888">(530) 344-3888</a>
+            </p>
+            <p>
+              <strong>Correo</strong><br />
+              <a href="mailto:pentecostalesdelasierra@gmail.com">
+                pentecostalesdelasierra@gmail.com
+              </a>
+            </p>
+            <p>
+              <strong>Sitio web</strong><br />
+              <a href="https://pentecostalesdelasierra.com" target="_blank">
+                pentecostalesdelasierra.com
+              </a>
+            </p>
+            <p style="margin-top: 0.6rem;">
+              <a href="https://www.google.com/maps/search/?api=1&query=10050+Wolf+Road,+Grass+Valley,+CA+95945"
+                 target="_blank">
+                Ver en Google Maps →
+              </a>
+            </p>
+            <p style="margin-top: 0.6rem;">
+              <a href="https://www.facebook.com/Pentecostalesdelasierra" target="_blank">
+                Facebook →
+              </a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container footer-inner">
+      <div>© <span id="year"></span> Pentecostales De La Sierra. Todos los derechos reservados.</div>
+      <div class="footer-links">
+        <a href="#beliefs">Creencias</a>
+        <a href="#events">Eventos</a>
+        <a href="#visit">Visítanos</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Mobile nav toggle
+    const navToggle = document.getElementById("nav-toggle");
+    const navLinks = document.getElementById("nav-links");
+
+    navToggle.addEventListener("click", () => {
+      navLinks.classList.toggle("open");
+    });
+
+    // Current year in footer
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
