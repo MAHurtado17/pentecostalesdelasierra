@@ -10,7 +10,6 @@
   <style>
     :root {
       --primary: #1e133f;
-      --primary-soft: #22174a;
       --accent: #a855f7;
       --accent-soft: #f3e8ff;
       --light-bg: #f9fafb;
@@ -18,9 +17,9 @@
       --border-subtle: #e5e7eb;
       --text-main: #111827;
       --text-muted: #6b7280;
-      --max-width: 1120px;
+      --max-width: 1100px;
       --radius-xl: 1.25rem;
-      --shadow-soft: 0 18px 45px rgba(15, 23, 42, 0.12);
+      --shadow-soft: 0 18px 40px rgba(15, 23, 42, 0.12);
     }
 
     * {
@@ -33,7 +32,7 @@
       font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
         sans-serif;
       color: var(--text-main);
-      background: radial-gradient(circle at top left, #ede9fe, #f9fafb 40%);
+      background: radial-gradient(circle at top left, #ede9fe, #f9fafb 45%);
       line-height: 1.6;
     }
 
@@ -59,11 +58,11 @@
     header {
       position: sticky;
       top: 0;
-      z-index: 30;
-      background: rgba(17, 24, 39, 0.92);
+      z-index: 20;
+      background: rgba(17, 24, 39, 0.95);
       backdrop-filter: blur(18px);
       color: #f9fafb;
-      border-bottom: 1px solid rgba(148, 163, 184, 0.35);
+      border-bottom: 1px solid rgba(148, 163, 184, 0.4);
     }
 
     .nav {
@@ -182,7 +181,7 @@
       overflow: hidden;
       background: radial-gradient(circle at top left, #7c3aed, #4c1d95 42%, #020617);
       box-shadow: var(--shadow-soft);
-      min-height: 62vh;
+      min-height: 55vh;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -194,16 +193,16 @@
       inset: 0;
       background:
         radial-gradient(circle at top right, rgba(244, 114, 182, 0.4), transparent 55%),
-        radial-gradient(circle at bottom left, rgba(129, 140, 248, 0.3), transparent 55%);
-      opacity: 0.8;
+        radial-gradient(circle at bottom left, rgba(129, 140, 248, 0.32), transparent 55%);
+      opacity: 0.9;
       pointer-events: none;
     }
 
     .hero-inner {
       position: relative;
       z-index: 1;
-      padding: 3.5rem 2.5rem;
-      max-width: 680px;
+      padding: 3.3rem 2.4rem 3rem;
+      max-width: 640px;
       text-align: center;
     }
 
@@ -237,17 +236,17 @@
     }
 
     .hero-title {
-      font-size: clamp(2.6rem, 4vw, 3.6rem);
+      font-size: clamp(2.4rem, 4vw, 3.4rem);
       font-weight: 800;
       letter-spacing: 0.02em;
       line-height: 1.05;
-      margin-bottom: 0.8rem;
+      margin-bottom: 0.7rem;
     }
 
     .hero-subtitle {
       font-size: 1rem;
       max-width: 30rem;
-      margin: 0.1rem auto 1.9rem;
+      margin: 0.1rem auto 1.8rem;
       color: #e5e7eb;
     }
 
@@ -256,7 +255,7 @@
       flex-wrap: wrap;
       justify-content: center;
       gap: 0.8rem;
-      margin-bottom: 1.8rem;
+      margin-bottom: 1.7rem;
     }
 
     .btn {
@@ -294,7 +293,7 @@
 
     @media (max-width: 768px) {
       .hero-inner {
-        padding: 2.75rem 1.75rem 3rem;
+        padding: 2.6rem 1.7rem 3rem;
       }
     }
 
@@ -305,7 +304,7 @@
     }
 
     section {
-      padding: 3.8rem 0;
+      padding: 3.4rem 0;
     }
 
     .section-inner {
@@ -313,7 +312,7 @@
       border-radius: var(--radius-xl);
       border: 1px solid var(--border-subtle);
       box-shadow: 0 18px 35px rgba(15, 23, 42, 0.06);
-      padding: 2.4rem 2.3rem 2.3rem;
+      padding: 2.3rem 2.2rem 2.2rem;
     }
 
     .section-title {
@@ -338,7 +337,7 @@
 
     @media (max-width: 768px) {
       .section-inner {
-        padding: 2rem 1.6rem 2.1rem;
+        padding: 2rem 1.7rem 2.1rem;
         border-radius: 1.4rem;
       }
     }
@@ -348,25 +347,76 @@
     .connect-body {
       margin-top: 1.1rem;
       display: grid;
-      gap: 1.2rem;
+      gap: 1.1rem;
+    }
+
+    .highlight-box {
+      margin-top: 1.3rem;
+      border-radius: 1rem;
+      background: var(--accent-soft);
+      border: 1px solid #e9d5ff;
+      padding: 1.1rem 1.2rem;
+      font-size: 0.9rem;
+      color: #4b5563;
+    }
+
+    /* BELIEFS ---------------------------------------------------- */
+
+    .beliefs-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1.4rem;
+      margin-top: 1.8rem;
+    }
+
+    .belief-card {
+      border-radius: 1rem;
+      border: 1px solid #e5e7eb;
+      background: #ffffff;
+      padding: 1.3rem 1.2rem 1.2rem;
+    }
+
+    .belief-label {
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: #7c3aed;
+      margin-bottom: 0.25rem;
+    }
+
+    .belief-title {
+      font-weight: 600;
+      margin-bottom: 0.45rem;
+      font-size: 1.02rem;
+    }
+
+    .belief-text {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+    }
+
+    @media (max-width: 900px) {
+      .beliefs-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
     }
 
     /* PASTORS ---------------------------------------------------- */
 
     .pastors-grid {
       display: grid;
-      grid-template-columns: minmax(0, 2.2fr) minmax(0, 3.2fr);
-      gap: 2.4rem;
-      margin-top: 1.8rem;
+      grid-template-columns: minmax(0, 2.1fr) minmax(0, 3fr);
+      gap: 2rem;
+      margin-top: 1.7rem;
       align-items: center;
     }
 
     .pastor-photo {
-      max-width: 270px;
+      max-width: 260px;
       border-radius: 1.4rem;
       overflow: hidden;
       margin: 0 auto;
-      box-shadow: 0 18px 40px rgba(15, 23, 42, 0.25);
+      box-shadow: 0 16px 36px rgba(15, 23, 42, 0.22);
     }
 
     .pastor-name {
@@ -385,52 +435,11 @@
       font-size: 0.84rem;
       color: #4b5563;
       font-style: italic;
-      margin-top: 0.8rem;
+      margin-top: 0.75rem;
     }
 
     @media (max-width: 900px) {
       .pastors-grid {
-        grid-template-columns: minmax(0, 1fr);
-      }
-    }
-
-    /* BELIEFS ---------------------------------------------------- */
-
-    .beliefs-grid {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 1.5rem;
-      margin-top: 1.9rem;
-    }
-
-    .belief-card {
-      border-radius: 1rem;
-      border: 1px solid #e5e7eb;
-      background: #ffffff;
-      padding: 1.4rem 1.3rem 1.3rem;
-    }
-
-    .belief-label {
-      font-size: 0.7rem;
-      text-transform: uppercase;
-      letter-spacing: 0.16em;
-      color: #7c3aed;
-      margin-bottom: 0.25rem;
-    }
-
-    .belief-title {
-      font-weight: 600;
-      margin-bottom: 0.4rem;
-      font-size: 1.02rem;
-    }
-
-    .belief-text {
-      font-size: 0.9rem;
-      color: var(--text-muted);
-    }
-
-    @media (max-width: 900px) {
-      .beliefs-grid {
         grid-template-columns: minmax(0, 1fr);
       }
     }
@@ -448,14 +457,14 @@
       background: var(--primary);
       color: #f9fafb;
       border-radius: 1.2rem;
-      padding: 1.8rem 1.6rem 1.6rem;
+      padding: 1.7rem 1.6rem 1.6rem;
       font-size: 0.95rem;
       box-shadow: 0 12px 30px rgba(15, 23, 42, 0.25);
     }
 
     .schedule h3 {
       font-size: 1.15rem;
-      margin-bottom: 0.75rem;
+      margin-bottom: 0.7rem;
     }
 
     .schedule dl {
@@ -529,8 +538,8 @@
       <nav class="nav-links" id="nav-links">
         <a href="#home">Inicio</a>
         <a href="#connect">Conéctate</a>
-        <a href="#pastors">Pastores</a>
         <a href="#beliefs">Creencias</a>
+        <a href="#pastors">Pastores</a>
         <a href="#visit">Visítanos</a>
       </nav>
 
@@ -549,14 +558,14 @@
         <div class="hero-inner">
           <div class="badge">
             <span class="badge-dot"></span>
-            <span>Grass Valley · Iglesia Apostólica</span>
+            <span>Grass Valley · Iglesia Apostólica · Bilingüe</span>
           </div>
 
-          <div class="hero-kicker">Bienvenido a casa</div>
+          <div class="hero-kicker">Conéctate aquí</div>
           <h1 class="hero-title">Pentecostales De La Sierra</h1>
           <p class="hero-subtitle">
-            Desde la Sierra para toda la Tierra. Una iglesia donde Jesús restaura
-            vidas, familias y corazones.
+            Desde la Sierra para toda la Tierra. Una iglesia donde Jesús sana,
+            restaura y llena con Su Espíritu.
           </p>
 
           <div class="hero-buttons">
@@ -584,20 +593,72 @@
       <div class="container">
         <div class="section-inner">
           <p class="section-title">Conéctate aquí</p>
-          <h2 class="section-heading">Una familia espiritual en la Sierra.</h2>
+          <h2 class="section-heading">Dios nos creó para conectarnos con Él.</h2>
 
           <div class="connect-body">
             <p class="section-text">
-              Creemos que Dios nos ha llamado a levantar una iglesia viva en la Sierra,
-              donde Su presencia transforma vidas y familias. No importa si apenas
-              comienzas a conocer a Jesús, si vienes de otra ciudad o si estás
-              regresando a la fe: hay un lugar preparado para ti.
+              El pecado nos separa de Dios, pero Jesús dio Su vida para que toda
+              persona pueda volver a conectarse con Él. En Pentecostales De La
+              Sierra valoramos la conexión con Dios, con la familia de la iglesia
+              y con nuestra comunidad.
             </p>
             <p class="section-text">
-              En cada servicio encontrarás adoración genuina, enseñanza bíblica clara
-              y un ambiente sencillo, familiar y lleno de amor. Ven tal como eres,
-              y deja que Dios haga la obra en tu corazón.
+              Te invitamos a unirte a nosotros los domingos y jueves para adorar,
+              escuchar la Palabra y experimentar la presencia de Dios de una manera
+              real. Ven tal como eres; Jesús hace lo nuevo desde adentro.
             </p>
+          </div>
+
+          <div class="highlight-box">
+            ¿Necesitas oración o tienes preguntas? Háblanos después del servicio o
+            contáctanos por teléfono, correo electrónico o Facebook. Nos encantaría
+            conocerte y caminar contigo.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- BELIEFS / WHAT IT MEANS TO BE PENTECOSTAL -->
+    <section id="beliefs">
+      <div class="container">
+        <div class="section-inner">
+          <p class="section-title">En qué creemos</p>
+          <h2 class="section-heading">¿Qué significa ser pentecostal?</h2>
+          <p class="section-text">
+            Creemos y experimentamos el mismo mensaje que la iglesia del libro de
+            Hechos. La salvación incluye arrepentimiento, bautismo en el Nombre de
+            Jesús y la llenura del Espíritu Santo.
+          </p>
+
+          <div class="beliefs-grid">
+            <article class="belief-card">
+              <p class="belief-label">Paso uno</p>
+              <h3 class="belief-title">Arrepentimiento</h3>
+              <p class="belief-text">
+                Reconocemos nuestro pecado, nos volvemos de él y pedimos perdón a
+                Jesús. El arrepentimiento abre la puerta a una vida nueva.
+              </p>
+            </article>
+
+            <article class="belief-card">
+              <p class="belief-label">Paso dos</p>
+              <h3 class="belief-title">Bautismo en el Nombre de Jesús</h3>
+              <p class="belief-text">
+                Somos bautizados en agua por inmersión en el Nombre de Jesucristo,
+                como enseña la Biblia, para el perdón de los pecados y testimonio
+                público de nuestra fe.
+              </p>
+            </article>
+
+            <article class="belief-card">
+              <p class="belief-label">Paso tres</p>
+              <h3 class="belief-title">Espíritu Santo</h3>
+              <p class="belief-text">
+                Creemos en la promesa del Espíritu Santo con la evidencia de hablar
+                en otras lenguas. Él nos da poder para vivir en santidad y compartir
+                el evangelio con valentía.
+              </p>
+            </article>
           </div>
         </div>
       </div>
@@ -608,18 +669,17 @@
       <div class="container">
         <div class="section-inner">
           <p class="section-title">Nuestros pastores</p>
-          <h2 class="section-heading">Un corazón pastoral para la Sierra.</h2>
+          <h2 class="section-heading">Hipólito &amp; Juanita Hurtado.</h2>
           <p class="section-text">
-            Dios ha puesto a los pastores Hipólito y Juanita Hurtado en esta región
-            con un profundo amor por las almas y por las familias de la Sierra.
-            Su anhelo es ver a cada persona conocer a Jesús, ser restaurada y vivir
-            llena del Espíritu Santo.
+            Los pastores Hipólito y Juanita Hurtado sirven a Dios y a la iglesia
+            con corazones sencillos y llenos de amor. Dios les ha dado una carga
+            especial por la Sierra y por las familias que la llaman hogar.
           </p>
 
           <div class="pastors-grid">
             <div>
               <div class="pastor-photo">
-                <!-- Usa tu foto pastoral existente -->
+                <!-- usa tu foto pastoral existente -->
                 <img src="Pastoral%20family%202025.jpg"
                      alt="Pastores Hipólito y Juanita Hurtado" />
               </div>
@@ -627,29 +687,18 @@
 
             <div>
               <p class="pastor-name">Pastores Hipólito &amp; Juanita Hurtado</p>
-              <p class="pastor-role">Pastores de Pentecostales De La Sierra</p>
+              <p class="pastor-role">Pentecostales De La Sierra</p>
 
               <p class="section-text">
-                Los pastores Hurtado sirven con corazones sencillos y manos dispuestas.
-                Les encanta orar con la gente, abrir la Biblia juntos y acompañar a las
-                familias en cada etapa de la vida. Creen que la iglesia debe ser un
-                lugar seguro donde se sienta el amor de Dios y el apoyo de una familia
-                espiritual.
-              </p>
-
-              <p class="section-text" style="margin-top: 0.75rem;">
-                Si necesitas oración, consejo o simplemente alguien que te escuche,
-                ellos estarán felices de conocerte y caminar contigo en tu jornada de fe.
+                Les encanta orar con las personas, abrir la Biblia juntos y caminar
+                al lado de cada familia en momentos de gozo y en tiempos difíciles.
+                Su deseo es que cada persona conozca el poder del Evangelio y
+                descubra el propósito que Dios tiene para su vida.
               </p>
 
               <p class="pastor-verse">
                 “Y os daré pastores según mi corazón, que os apacienten con ciencia
                 y con inteligencia.” – Jeremías 3:15
-              </p>
-              <p class="pastor-verse">
-                “Tan grande es nuestro afecto por vosotros, que hubiéramos querido
-                entregaros no sólo el evangelio de Dios, sino también nuestras propias
-                vidas.” – 1 Tesalonicenses 2:8
               </p>
             </div>
           </div>
@@ -657,62 +706,15 @@
       </div>
     </section>
 
-    <!-- BELIEFS -->
-    <section id="beliefs">
-      <div class="container">
-        <div class="section-inner">
-          <p class="section-title">En qué creemos</p>
-          <h2 class="section-heading">El mensaje apostólico de Jesús.</h2>
-          <p class="section-text">
-            Somos una iglesia apostólica que predica el mensaje del libro de Hechos:
-            arrepentimiento, bautismo en el Nombre de Jesús y la promesa del Espíritu
-            Santo para todos.
-          </p>
-
-          <div class="beliefs-grid">
-            <article class="belief-card">
-              <p class="belief-label">Paso uno</p>
-              <h3 class="belief-title">Arrepentimiento</h3>
-              <p class="belief-text">
-                Creemos que el primer paso es volvernos de todo pecado y rendir
-                nuestro corazón completamente a Dios, confiando en Su gracia y en Su
-                perdón.
-              </p>
-            </article>
-
-            <article class="belief-card">
-              <p class="belief-label">Paso dos</p>
-              <h3 class="belief-title">Bautismo en el Nombre de Jesús</h3>
-              <p class="belief-text">
-                Practicamos el bautismo en agua por inmersión en el Nombre de
-                Jesucristo, como respuesta de obediencia y testimonio público de una
-                nueva vida en Él.
-              </p>
-            </article>
-
-            <article class="belief-card">
-              <p class="belief-label">Paso tres</p>
-              <h3 class="belief-title">Vida llena del Espíritu Santo</h3>
-              <p class="belief-text">
-                Creemos en la experiencia del Espíritu Santo y en una vida llena de
-                Su poder, Su presencia y Su guía diaria para vivir en santidad y
-                testificar de Cristo.
-              </p>
-            </article>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- VISIT -->
+    <!-- VISIT / CONTACT -->
     <section id="visit">
       <div class="container">
         <div class="section-inner">
           <p class="section-title">Visítanos</p>
           <h2 class="section-heading">Hay un lugar para ti.</h2>
           <p class="section-text">
-            Nos encantaría conocerte en persona. Si planeas visitarnos por primera vez,
-            si tienes preguntas o si necesitas oración, siéntete libre de comunicarte
+            Nos encantaría verte en persona. Si necesitas instrucciones, tienes
+            preguntas o quieres que alguien ore por ti antes de venir, comunícate
             con nosotros.
           </p>
 
@@ -726,8 +728,7 @@
                 <dd>7:00 PM · Estudio bíblico</dd>
               </dl>
               <p class="small-text">
-                Mantente atento a los anuncios para servicios especiales y eventos
-                durante el año.
+                Servicios bilingües · Español &amp; Inglés · Todos son bienvenidos.
               </p>
             </div>
 
