@@ -135,27 +135,24 @@
         url("hero.jpg"); /* Opcional: sube una imagen hero.jpg o deja solo el gradiente */
       background-size: cover;
       background-position: center;
-      z-index: -2;
+      z-index: -1;
     }
 
-    /* Logo como marca de agua en el hero */
-   .hero-logo-overlay {
-  position: absolute;
-  inset: 0;
-  background-image: url("Churchlogo.svg");
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: min(70%, 420px);
-  opacity: 0.32; /* adjust this number if you want more/less visibility */
-  pointer-events: none;
-  z-index: -1;
-}
-
+    /* small logo above title */
+    .hero-small-logo {
+      width: 120px;
+      margin: 0 auto 1rem;
+      opacity: 0.9;
+      display: block;
+      position: relative;
+      z-index: 1;
     }
 
     .hero-inner {
       padding: 4rem 1.25rem 3rem;
       max-width: 720px;
+      position: relative;
+      z-index: 2;
     }
 
     .hero-kicker {
@@ -397,6 +394,7 @@
     }
 
     /* PASTORS SECTION */
+
     .pastor-photo {
       max-width: 260px;
       border-radius: 16px;
@@ -573,7 +571,10 @@
   <main id="home">
     <section class="hero">
       <div class="hero-bg"></div>
-      <div class="hero-logo-overlay"></div>
+
+      <!-- pequeño logo arriba del título -->
+      <img src="churchlogo.svg" alt="Church Logo" class="hero-small-logo" />
+
       <div class="hero-inner">
         <div class="hero-kicker">Grass Valley, California · Iglesia Apostólica</div>
         <h1 class="hero-title">Pentecostales De La Sierra</h1>
@@ -783,7 +784,6 @@
           <!-- FOTO -->
           <div>
             <div class="pastor-photo">
-              <!-- El nombre de tu archivo tiene espacios, así que usamos %20 -->
               <img src="Pastoral%20family%202025.jpg" alt="Familia pastoral" />
             </div>
           </div>
