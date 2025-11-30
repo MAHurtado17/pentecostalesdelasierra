@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -6,13 +5,13 @@
   <title>Pentecostales De La Sierra | Desde la Sierra para toda la Tierra</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="description"
-        content="Pentecostales De La Sierra en Grass Valley, CA. Iglesia apostólica bilingüe (Español / Inglés). Desde la Sierra para toda la Tierra." />
+        content="Pentecostales De La Sierra en Grass Valley, CA. Iglesia apostólica en la Sierra de California." />
 
   <style>
     :root {
-      --primary: #1e133f;   /* dark purple */
-      --accent: #a855f7;    /* light purple */
-      --light-bg: #f5f3ff;  /* very light purple */
+      --primary: #1e133f;   /* morado oscuro */
+      --accent: #a855f7;    /* morado claro */
+      --light-bg: #f5f3ff;  /* morado muy claro */
       --text-main: #111827;
       --text-muted: #6b7280;
       --max-width: 1100px;
@@ -133,9 +132,22 @@
         linear-gradient(to bottom right,
           rgba(30, 19, 63, 0.95),
           rgba(168, 85, 247, 0.7)),
-        url("hero.jpg"); /* Cambia esto por tu propia imagen */
+        url("hero.jpg"); /* Opcional: sube una imagen hero.jpg o deja solo el gradiente */
       background-size: cover;
       background-position: center;
+      z-index: -2;
+    }
+
+    /* Logo como marca de agua en el hero */
+    .hero-logo-overlay {
+      position: absolute;
+      inset: 0;
+      background-image: url("Church%20Logo%20Black.svg");
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: min(70%, 420px);
+      opacity: 0.16; /* Ajusta si quieres más o menos visible */
+      pointer-events: none;
       z-index: -1;
     }
 
@@ -164,10 +176,6 @@
       max-width: 32rem;
       margin: 0 auto 1.5rem;
       color: #e5e7eb;
-    }
-
-    .hero-subtitle span {
-      display: block;
     }
 
     .hero-buttons {
@@ -387,7 +395,6 @@
     }
 
     /* PASTORS SECTION */
-
     .pastor-photo {
       max-width: 260px;
       border-radius: 16px;
@@ -542,7 +549,7 @@
       </div>
 
       <nav class="nav-links" id="nav-links">
-        <a href="#home">Inicio / Home</a>
+        <a href="#home">Inicio</a>
         <a href="#connect">Conéctate</a>
         <a href="#beliefs">Creencias</a>
         <a href="#events">Eventos</a>
@@ -552,7 +559,7 @@
 
       <a class="nav-cta" href="#visit">Planifica tu visita</a>
 
-      <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation">
+      <button class="nav-toggle" id="nav-toggle" aria-label="Abrir navegación">
         <span></span>
         <span></span>
         <span></span>
@@ -564,14 +571,12 @@
   <main id="home">
     <section class="hero">
       <div class="hero-bg"></div>
+      <div class="hero-logo-overlay"></div>
       <div class="hero-inner">
         <div class="hero-kicker">Grass Valley, California · Iglesia Apostólica</div>
         <h1 class="hero-title">Pentecostales De La Sierra</h1>
         <p class="hero-subtitle">
-          <span>Desde la Sierra para toda la Tierra.</span>
-          <span style="opacity: 0.9; font-size: 0.95rem;">
-            From the Sierra to the whole Earth.
-          </span>
+          Desde la Sierra para toda la Tierra.
         </p>
         <div class="hero-buttons">
           <a href="https://www.facebook.com/Pentecostalesdelasierra"
@@ -583,7 +588,7 @@
           </a>
         </div>
         <div class="hero-meta">
-          Domingo 2:00 PM · Jueves 7:00 PM · Servicios bilingües (Español / Inglés)
+          Domingo 2:00 PM · Jueves 7:00 PM · Servicios en la Sierra de California
         </div>
       </div>
     </section>
@@ -591,10 +596,10 @@
     <!-- CONNECT SECTION -->
     <section id="connect">
       <div class="container">
-        <p class="section-title">Conéctate aquí · Connect here</p>
+        <p class="section-title">Conéctate aquí</p>
         <h2 class="section-heading">Una familia espiritual en la Sierra.</h2>
         <p class="section-text">
-          Creemos que Dios nos llamó a levantar una iglesia viva en la Sierra,
+          Creemos que Dios nos ha llamado a levantar una iglesia viva en la Sierra,
           donde Su presencia transforma vidas y familias. Aquí encontrarás
           adoración apasionada, enseñanza bíblica y un pueblo que te abraza tal
           como eres.
@@ -603,30 +608,29 @@
         <div class="connect-grid">
           <div>
             <p class="section-text">
-              Ya sea que estés comenzando a conocer de Jesús o buscando un
-              hogar espiritual, hay un lugar para ti en Pentecostales De La
-              Sierra. Ven listo para recibir, crecer y servir.
+              Si estás comenzando a conocer de Jesús, regresando a la iglesia o
+              buscando un hogar espiritual, hay un lugar para ti en
+              Pentecostales De La Sierra. Ven listo para recibir, crecer y servir.
             </p>
             <p class="section-text" style="margin-top: 0.8rem;">
-              Whether you are exploring faith, returning to church, or looking
-              for a home church, you are welcome here. We are a bilingual
-              congregation, worshiping together in Spanish and English.
+              Nuestro deseo es ver a cada persona restaurada, llena del Espíritu
+              Santo y caminando en el propósito que Dios tiene para su vida.
             </p>
           </div>
 
           <div class="callout-card">
             <h3>Da tu siguiente paso</h3>
             <p>
-              Únete a un servicio, conéctate a un grupo, pide oración o comienza
-              un estudio bíblico. Queremos caminar contigo en tu relación con
-              Jesús.
+              Únete a un servicio, pide oración, comienza un estudio bíblico o
+              involúcrate en uno de los ministerios de la iglesia. Queremos
+              caminar contigo en tu relación con Jesús.
             </p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- SUBSCRIBE SECTION (DEMO) -->
+    <!-- SUBSCRIBE SECTION (DEMO / CONTACTO RÁPIDO) -->
     <section>
       <div class="container">
         <p class="section-title">Mantente informado</p>
@@ -642,11 +646,11 @@
             <input type="tel" placeholder="Número de teléfono (opcional)" />
           </div>
           <button type="submit" class="btn btn-primary">
-            Suscribirme
+            Enviar
           </button>
           <p class="small-text">
-            Este formulario es de demostración. Al lanzar el sitio, conéctalo
-            a tu servicio real de correo o SMS.
+            Este formulario es solo de demostración. Al lanzar el sitio, puedes
+            conectarlo a tu servicio real de correo o mensajes.
           </p>
         </form>
       </div>
@@ -659,13 +663,13 @@
         <h2 class="section-heading">Reuniones y eventos.</h2>
         <p class="section-text">
           Nuestros servicios y actividades están diseñados para ayudarte a
-          crecer en tu fe y construir relaciones genuinas con otros creyentes.
+          crecer en la fe y construir relaciones genuinas con otros creyentes.
         </p>
 
         <div class="cards-row">
           <article class="event-card">
             <img src="event1.jpg" alt="Servicio de adoración" />
-            <!-- Sube tu propia imagen y actualiza el archivo -->
+            <!-- Sube tu propia imagen con este nombre o cámbialo -->
             <div class="event-content">
               <div class="event-tag">Domingo</div>
               <h3 class="event-title">Servicio de Adoración</h3>
@@ -691,14 +695,14 @@
           </article>
 
           <article class="event-card">
-            <img src="event3.jpg" alt="Alcance comunitario" />
+            <img src="event3.jpg" alt="Eventos especiales" />
             <div class="event-content">
               <div class="event-tag">Especial</div>
               <h3 class="event-title">Eventos y Alcance</h3>
               <p class="event-meta">Fechas variables</p>
               <p class="small-text">
-                Nos esforzamos por bendecir a Grass Valley y las comunidades
-                cercanas a través de diferentes actividades y proyectos.
+                Buscamos bendecir a Grass Valley y las comunidades cercanas por
+                medio de diferentes actividades y proyectos.
               </p>
             </div>
           </article>
@@ -723,10 +727,11 @@
             <h3 class="belief-title">Arrepentimiento</h3>
             <p class="belief-text">
               El arrepentimiento es volverse de todo pecado y rendir el corazón
-              completamente a Dios, confiando en Su gracia.
+              completamente a Dios, confiando en Su gracia y en Su perdón.
             </p>
             <p class="belief-scripture">
-              “Arrepentíos… para que sean borrados vuestros pecados.” (Hch 3:19)
+              “Arrepentíos, pues, y convertíos, para que sean borrados
+              vuestros pecados.” (Hechos 3:19)
             </p>
           </article>
 
@@ -735,22 +740,26 @@
             <h3 class="belief-title">Bautismo en el Nombre de Jesús</h3>
             <p class="belief-text">
               Practicamos el bautismo en agua por inmersión en el Nombre de
-              Jesucristo, como enseñanza clara de la iglesia primitiva.
+              Jesucristo, como respuesta de obediencia y testimonio público de
+              una nueva vida en Él.
             </p>
             <p class="belief-scripture">
-              “Bautícese cada uno de vosotros en el nombre de Jesucristo.” (Hch 2:38)
+              “Bautícese cada uno de vosotros en el nombre de Jesucristo
+              para perdón de los pecados.” (Hechos 2:38)
             </p>
           </article>
 
           <article class="belief-card">
             <p class="belief-label">Paso Tres</p>
-            <h3 class="belief-title">Vida llena del Espíritu</h3>
+            <h3 class="belief-title">Vida Llena del Espíritu</h3>
             <p class="belief-text">
-              Creemos en la experiencia del Espíritu Santo con la evidencia
-              bíblica y en una vida de poder, santidad y testimonio.
+              Creemos en la experiencia del Espíritu Santo y en una vida
+              llena de Su poder, Su presencia y Su guía diaria para vivir
+              en santidad y testificar de Cristo.
             </p>
             <p class="belief-scripture">
-              “Recibiréis poder cuando haya venido sobre vosotros el Espíritu Santo.” (Hch 1:8)
+              “Pero recibiréis poder, cuando haya venido sobre vosotros
+              el Espíritu Santo.” (Hechos 1:8)
             </p>
           </article>
         </div>
@@ -760,38 +769,39 @@
     <!-- PASTORS SECTION -->
     <section id="pastors">
       <div class="container">
-        <p class="section-title">Nuestros Pastores · Our Pastors</p>
+        <p class="section-title">Nuestros pastores</p>
         <h2 class="section-heading">Conoce a nuestros líderes.</h2>
         <p class="section-text">
-          Dios ha levantado líderes con un corazón por la Sierra y por las familias.
-          Servimos con amor, unidad y visión apostólica. Somos una iglesia bilingüe
-          comprometida con alcanzar Grass Valley y las comunidades vecinas.
+          Dios ha levantado líderes con un corazón por la Sierra y por las
+          familias. Servimos con amor, unidad y visión apostólica, buscando que
+          cada persona conozca a Jesús y crezca en Él.
         </p>
 
         <div class="connect-grid" style="margin-top: 2rem;">
-          <!-- PHOTO -->
+          <!-- FOTO -->
           <div>
             <div class="pastor-photo">
-              <!-- Usa el archivo que subiste -->
+              <!-- El nombre de tu archivo tiene espacios, así que usamos %20 -->
               <img src="Pastoral%20family%202025.jpg" alt="Familia pastoral" />
             </div>
           </div>
 
-          <!-- TEXT -->
+          <!-- TEXTO -->
           <div>
             <p class="pastor-name">Familia Pastoral</p>
-            <p class="pastor-role">Pastores · Leaders</p>
+            <p class="pastor-role">Siervos de Dios en la Sierra</p>
 
             <p class="section-text">
-              Nuestra familia pastoral está dedicada a servir a Dios y a nuestra
-              comunidad con humildad, pasión y amor. Creemos en el poder del Espíritu
-              Santo para transformar vidas, restaurar hogares y avivar corazones.
+              Nuestra familia pastoral está dedicada a servir a Dios y a la
+              iglesia con humildad, pasión y amor. Creemos en el poder del
+              Espíritu Santo para transformar vidas, restaurar hogares y
+              avivar corazones.
             </p>
 
             <p class="section-text" style="margin-top: 0.7rem;">
-              Our pastoral family is committed to teaching the Word, serving our city,
-              and welcoming everyone who desires to grow spiritually. We are here to
-              support, guide, and walk alongside you in your journey with Christ.
+              Oramos por cada persona que entra por estas puertas, creyendo que
+              Dios tiene un plan perfecto para su vida. Nos encantaría
+              conocerte personalmente y caminar contigo en tu jornada con Cristo.
             </p>
           </div>
         </div>
@@ -818,8 +828,7 @@
               <dd>7:00 PM · Estudio bíblico</dd>
             </dl>
             <p class="small-text">
-              Servicios bilingües: Español / Inglés.
-              Actualiza este horario si cambia en el futuro.
+              Mantente atento a los anuncios para servicios especiales y eventos.
             </p>
           </div>
 
@@ -835,7 +844,7 @@
               <a href="tel:15303443888">(530) 344-3888</a>
             </p>
             <p>
-              <strong>Correo</strong><br />
+              <strong>Correo electrónico</strong><br />
               <a href="mailto:pentecostalesdelasierra@gmail.com">
                 pentecostalesdelasierra@gmail.com
               </a>
@@ -876,7 +885,7 @@
   </footer>
 
   <script>
-    // Mobile nav toggle
+    // Navegación móvil
     const navToggle = document.getElementById("nav-toggle");
     const navLinks = document.getElementById("nav-links");
 
@@ -884,7 +893,7 @@
       navLinks.classList.toggle("open");
     });
 
-    // Current year in footer
+    // Año actual en el footer
     document.getElementById("year").textContent = new Date().getFullYear();
   </script>
 </body>
